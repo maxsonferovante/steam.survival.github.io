@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Customer base</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <h1>Play, talk, create and survive</h1>
     <p>Make your registration and secure access to our vast library of games and services.</p>
 
     <form action="page.php">
-        Name:<br>
-        <input type="text" name="name"><br>
+        <label for ="fname">Name </label>
+        <input type="text" id="fname" name="name">
 
-        Address:<br>
-        <input type="text" name="address"><br>
+        <label for ="faddress">Address</label>
+        <input type="text" id="faddress" name="address">
 
-        CPF:<br>
-        <input type="number" name="cpf"><br>
 
-        Phone:<br>
-        <input type="number" name="phone">
-        <br><br>
+        <label for ="fCPF"> CPF</label>
+        <input type="number" id="fCPF" name="cpf">
+        <label for="fPhone">Phone</label>
+        <input type="number" id="fPhone" name="phone">
+        
 
         <input type="reset" value="Clear">
-        <br><br>
-
         <input type="submit" value="Sign up for Steam">
     </form>
 
