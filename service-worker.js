@@ -16,18 +16,18 @@ var dataCacheName = 'steamSurvivalData-v1';
 var cacheName = 'steamSurvivalPWA-final-1';
 
 var filesToCache = [
-  '/',
-  '/index.html',
-  '/scripts/app.js',
-  '/styles/style.css',
+  
+  'index.html',
+  'scripts/app.js',
+  'styles/style.css',
 
-  '/img/dont_starve.png',
-  '/img/logo_2.png',
-  '/img/logo.png',
-  '/img/oxygen_not_inclided.jpg',
-  '/img/rime.jpg',
-  '/img/rust.jpg',
-  '/img/the_forest.jpg'
+  'img/dont_starve.png',
+  'img/logo_2.png',
+  'img/logo.png',
+  'img/oxygen_not_inclided.jpg',
+  'img/rime.jpg',
+  'img/rust.jpg',
+  'img/the_forest.jpg'
 ];
 
 self.addEventListener('install', function(e) {
@@ -52,17 +52,3 @@ self.addEventListener('fetch',function(e)
     })
   );
 })
-self.addEventListener('activate', function(e) {
-  console.log('[ServiceWorker] Activate');
-  e.waitUntil(
-    caches.keys().then(function(keyList) {
-      return Promise.all(keyList.map(function(key) {
-        if (key !== cacheName && key !== dataCacheName) {
-          console.log('[ServiceWorker] Removing old cache', key);
-          return caches.delete(key);
-        }
-      }));
-    })
-  );
-});
-
