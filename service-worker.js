@@ -18,7 +18,7 @@ var cacheName = 'steamSurvivalPWA-final-1';
 var filesToCache = [
   '/',
   '/index.html',
-  '/manifest/manifest.json',
+  '/manifest.json',
 
   '/scripts/app.js',
   '/styles/style.css',
