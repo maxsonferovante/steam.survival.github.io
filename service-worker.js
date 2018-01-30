@@ -1,26 +1,11 @@
-// Copyright 2018 Maxson Almeida Ferovante.
-// 
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-// 
-//      http://www.apache.org/licenses/LICENSE-2.0
-// 
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
-var dataCacheName = 'steamSurvivalData-v1';
-var cacheName = 'steamSurvivalPWA-final-1';
-
-var filesToCache = [
-  
+var cacheName = 'steamsurvival-v1';
+var filesToCache = [  
   'index.html',
+  'cadastro.html',
+  'empresa.html',
+  'ofertas.html',
   'scripts/app.js',
   'styles/style.css',
-
   'img/dont_starve.png',
   'img/logo_2.png',
   'img/logo.png',
@@ -30,16 +15,17 @@ var filesToCache = [
   'img/the_forest.jpg'
 ];
 
-self.addEventListener('install', function(e) {
-  console.log('[ServiceWorker] Install');
-  e.waitUntil(
+self.addEventListener('install', function(event) {
+  // perform install steps
+  event.waitUntil(
     caches.open(cacheName)
-    .then(function(cache) {
-      console.log('[ServiceWorker] open cache');
-      return cache.addAll(filesToCache);
-    })
+      .then(function(cache) {
+        console.log('Opened cache');
+        return cache.addAll(filesToCache);
+      })
   );
 });
+
 self.addEventListener('fetch',function(e)
 {
   e.respondeWith(

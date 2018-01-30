@@ -2,8 +2,8 @@
   "name": "Steam Survival",
   "short_name": "Steam Survival",  
   "icons": [{
-    "src": "img/logo.png",
-      "sizes": "420x120",
+    "src": "img/logo_app.png",
+      "sizes": "300x300",
       "type": "image/png"
     }],
   "start_url": "/index.html",
