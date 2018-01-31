@@ -1,15 +1,14 @@
 var cacheName = 'steamsurvival-v1';
 var filesToCache = [  
   'index.html',
-  'cadastro.html',
   'empresa.html',
   'ofertas.html',
   'scripts/app.js',
   'styles/style.css',
-  'img/dont_starve.png',
+  'img/dont_starve.jpg',
   'img/logo_2.png',
   'img/logo.png',
-  'img/oxygen_not_inclided.jpg',
+  'img/oxygen_not_included.jpg',
   'img/rime.jpg',
   'img/rust.jpg',
   'img/the_forest.jpg'
@@ -28,10 +27,10 @@ self.addEventListener('install', function(event) {
 
 self.addEventListener('fetch',function(e)
 {
-  e.respondeWith(
+  e.respondWith(
     caches.match(e.request)
     .then(function(responde){
-      if(response){
+      if(responde){
         return responde;
       }
       return fetch(e.request);
